@@ -1,12 +1,11 @@
-name: Production deployment
+name: Dev deployment
 
 on:
-  push:
-    branches:
-      - main
+  pull_request:
+
 jobs:
-  live-job:
-    environment: Live
+  dev-job:
+    environment: Dev
     runs-on: ubuntu-latest
     steps:
       - run: echo "${{ vars.ENV_VAL }}"  >> $GITHUB_STEP_SUMMARY
